@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <ul>
+        <li><a routerLink="customer" skipLocationChange="true">Customers</a></li>
+        <li><a routerLink="meeting-schedule" skipLocationChange="true">Meeting</a></li>
+
+        <li style="position:relative;float:right;">
+            <a routerLink="logout()"
+            (click)="logout()"
+            >
+            <i class="fa fa-sign-out" style="font-size:36px"></i>
+            </a>
+        </li>
+    </ul>
+    <hr/>
+    <router-outlet></router-outlet>
+</div>

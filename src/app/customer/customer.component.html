@@ -1,0 +1,65 @@
+<div>
+    
+    <form [formGroup]="clientRef" (ngSubmit)="createClient()">
+        <div>
+            <h3>Create a Client</h3>
+            <p class="text">Please fill in this form to create a client</p>
+            <hr/>
+        </div>
+
+        <div class="form-input">
+            <label>Client Name</label>
+            <input type="text" placeholder="Enter Company Name" formControlName="clientname">
+
+            <label>Business Category</label>
+            <input type="text" placeholder="Enter Business Category" formControlName="businescategory">
+
+            <label>Address</label>
+            <input type="text" placeholder="Enter Address" formControlName="address">  
+
+            <label>Contact Person</label>
+            <input type="text" placeholder="Enter Contact Person" formControlName="contactperson">       
+
+            <label>Email</label>
+            <input type="text" placeholder="Enter Email" formControlName="email">
+
+            <label>Phone</label>
+            <input type="text" placeholder="Enter Phone Number" formControlName="phone">
+
+            
+        </div>
+
+        <button class="button" type="submit">Create</button>
+        <button class="button" type="reset">Cancel</button> <hr/>
+        <div>
+            <table>
+                <tr>
+                    <th>CID</th>
+                    <th>Client Name</th>
+                    <th>Busines Category</th>
+                    <th>Address</th>                   
+                    <th>Contact Person</th>
+                    <th>Email</th>
+                    <th>Phone</th>                    
+                    <th>Update Client</th>
+                    <th>Delete Client</th>
+                    
+                </tr>
+                <tr *ngFor="let customer of customers">
+                   <td>{{customer.id}}</td>
+                   <td>{{customer.clientname}}</td>
+                   <td>{{customer.businescategory}}</td>
+                   <td>{{customer.address}}</td>
+                   <td>{{customer.contactperson}}</td>
+                   <td>{{customer.email}}</td>
+                   <td>{{customer.phone}}</td>                                
+                              
+                   <td><a class="update-icon"><i class="fa fa-pencil-square-o" aria-hidden="true" (click)="updateClient(customer)"></i></a></td>
+                   <td><a class="delete-icon"><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteClient(customer.id)"></i></a></td>
+                </tr>
+            </table>
+        </div>
+
+    </form>
+    
+</div>

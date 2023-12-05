@@ -1,0 +1,21 @@
+ul{
+    border: 2px blue solid;
+    background-color: rgb(142, 145, 144);
+    border-radius: 10px;
+    width: 70%;
+    color: #0347ad;;
+    font-weight: 600;
+}
+
+li{
+    display: inline-block;
+    margin: 15px;
+    font-size: 20pt;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: blue
+}
+

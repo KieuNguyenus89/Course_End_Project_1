@@ -1,0 +1,72 @@
+<div>
+    <h3>Create a Meeting Schedule</h3> 
+    <hr/>
+    <div>
+        <form [formGroup]="meetingRef" (ngSubmit)="createMeeting()">    
+            <div>
+                <div class="form-row">                
+                    <label class="form-label">Client Name</label>
+                    <!-- <div class="select">
+                        <select >
+                            <option value="0">--Select Client Name--</option>
+                            <option *ngFor="let client of clients" [value]="client.id">{{client.clientname}}</option>
+                        </select>
+                    </div> -->
+                    <input class="form-input" type="text" placeholder="Enter Client Name" formControlName="clientname">
+                </div>
+
+                <div class="form-row">
+                    <label class="form-label">Meeting Topic</label>
+                    <input class="form-input" type="text" placeholder="Enter Meeting Topic" formControlName="meetingtopic">
+                </div>
+
+                <div class="form-row">
+                    <label class="form-label">Number of People</label>
+                    <input class="form-input" type="text" placeholder="Enter Number of People" formControlName="numberofpeople">
+                </div>
+
+                <div class="form-row">
+                    <label class="form-label">Start Time</label>
+                    <input class="form-input"
+                        type="datetime-local"
+                        id="meeting-time"
+                        name="meeting-time"
+                        value="2023-12-01T19:30"
+                        min="2023-12-01T00:00"
+                        max="2024-12-31T00:00" /> 
+                </div>
+
+                <div>
+                    <button type="submit">Create</button>
+                    <button type="reset">Cancel</button> <hr/>
+                </div>
+
+                
+            </div>
+
+            <div>
+                <table>
+                    <tr>
+                        <th>MID</th>
+                        <th>Client Name</th>
+                        <th>Meeting topic</th>
+                        <th>Number Of People</th>                   
+                        <th>startime</th>                    
+                        <th>Update Meeting</th>
+                        <th>Delete Meeting</th>
+                        
+                    </tr>
+                    <tr *ngFor="let meeting of meetings">
+                    <td>{{meeting.id}}</td>
+                    <td>{{meeting.clientname}}</td>
+                    <td>{{meeting.meetingtopic}}</td>
+                    <td>{{meeting.numberofpeople}}</td>
+                    <td>{{meeting.startime}}</td>             
+                    <td><a class="update-icon"><i class="fa fa-pencil-square-o" aria-hidden="true" (click)="updateMeeting(meeting)"></i></a></td>
+                    <td><a class="delete-icon"><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteMeeting(meeting.id)"></i></a></td>
+                    </tr>
+                </table>
+            </div>
+    </form>
+</div>
+</div>
